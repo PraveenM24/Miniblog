@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Twitter Wall</title>
+    <link href="https://necolas.github.io/normalize.css/7.0.0/normalize.css" rel="stylesheet">
+    <link href="./assets/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.min.css'>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="./assets/js/profile.js"></script>
+    <style>
+        .visibility {
+            display: block !important;
+        }
+        
+        #container {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="segoe" style="background: rgb(230, 236, 240);">
+    <nav class="navbar navbar-toggleable-md fixed-top">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse container">
+            <!-- Navbar navigation links -->
+            <!---- <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#"><i class="octicon octicon-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="octicon octicon-zap"></i> Moments</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="octicon octicon-bell"></i> Notifications</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="octicon octicon-inbox"></i> Messages</a>
+                </li>
+            </ul>-->
+            <!-- END: Navbar navigation links -->
+            <!-- Navbar Search form -->
+            <form class="navbar-form" role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control input-search" placeholder="Search" name="srch-term" id="srch-term">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default btn-search" type="submit"><i class="octicon octicon-search navbar-search-icon"></i></button>
+                    </div>
+                </div>
+            </form>
+            <button class="btn btn-search-bar tweet-btn" data-button='Tweet'>Tweet</button>
+        </div>
+    </nav>
+    <script>
+        document.querySelectorAll('.tweet-btn').forEach(function(item) {
+            let getBtnData = item.dataset.button;
+            item.addEventListener('click', function(e) {
+                document.querySelector('[data-type="' + getBtnData + '"]').classList.toggle('visibility')
+            })
+
+        })
+    </script>
+
+    <div class="main-container">
+        <div class="row profile-background">
+            <div class="container">
+                <div class="avatar-container">
+                    <div class="avatar">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar profile-stats">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col">
+
+                    </div>
+                    <div class="col-6">
+                        <ul>
+                            <li class="profile-stats-item-active">
+                                <a>
+                                    <span class="profile-stats-item profile-stats-item-label">Tweets</span>
+                                    <span class="profile-stats-item profile-stats-item-number" id="statslistitemcount">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <span class="profile-stats-item profile-stats-item-label">Following</span>
+                                    <span class="profile-stats-item profile-stats-item-number">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <span class="profile-stats-item profile-stats-item-label">Followers</span>
+                                    <span class="profile-stats-item profile-stats-item-number">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <span class="profile-stats-item profile-stats-item-label">Likes</span>
+                                    <span class="profile-stats-item profile-stats-item-number">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col">
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="rightcontainer" data-type="Tweet" id="container">
+            <div class="posttweetcontainer">
+                <img class="posttweetprofimg" src="http://3.bp.blogspot.com/-JCYefwq__2U/TxCfC3s1ZpI/AAAAAAAAKcM/u5mw7qPAL0w/s300-c/Camilla-Belle-6.jpg">
+                <div class="ml56px">
+                    <div class="posttweettacontainer">
+                        <textarea id="posttweetta" class="posttweetta" placeholder="What's happening?" draggable="false"></textarea>
+                        <div class="posttweetcountcont">
+                            <span class="posttweetcount"><span id="totalchars">0</span>/250</span>
+                        </div>
+                    </div>
+                    <div class="posttweetbutcont">
+                        <button id="posttweetbut" class="posttweetbut">Post</button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <ul id="tweetscontainer" class="tweetscontainer">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

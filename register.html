@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>HTML CSS Register Form</title>
+    <link rel="stylesheet" href="./assets/css/register.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/v4-shims.css">
+</head>
+
+<body>
+    <form class="signup-form" action="/register" method="post">
+        <div class="form-header">
+            <h1>Create Account</h1>
+        </div>
+        <div class="form-body">
+            <div class="horizontal-group">
+                <div class="form-group left">
+                    <label for="firstname" class="label-title">First name <span class="required">*</span></label>
+                    <div class="input-container">
+                        <i class="far fa-user icon"></i>
+                        <input type="text" id="firstname" class="form-input" placeholder="John" required="required" />
+                    </div>
+                </div>
+                <div class="form-group right">
+                    <label for="lastname" class="label-title">Last name <span class="required">*</span></label>
+                    <div class="input-container">
+                        <i class="fas fa-user icon"></i>
+                        <input type="text" id="lastname" class="form-input" placeholder="Doe" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email" class="label-title">Email <span class="required">*</span></label>
+                <div class="input-container">
+                    <i class="fa fa-envelope icon"></i>
+                    <input type="email" id="email" class="form-input" placeholder="johndoe@xyz.com" required="required">
+                </div>
+            </div>
+            <div class="horizontal-group">
+                <div class="form-group left">
+                    <label for="password" class="label-title">Password <span class="required">*</span></label>
+                    <div class="input-container">
+                        <i class="fa fa-lock icon"></i>
+                        <input type="password" id="password" class="form-input" placeholder="********" required="required">
+                    </div>
+                </div>
+                <div class="form-group right">
+                    <label for="confirm-password" class="label-title">Confirm Password <span class="required">*</span></label>
+                    <div class="input-container">
+                        <i class="fa fa-lock icon"></i>
+                        <input type="password" class="form-input" id="confirm-password" placeholder="********" required="required">
+                    </div>
+                </div>
+            </div>
+            <div class="horizontal-group">
+                <div class="form-group left">
+                    <label class="label-title">Batch <span class="required">*</span></label>
+                    <div class="input-container">
+                        <i class="fa fa-calendar icon"></i>
+                        <select class="form-input" id="level">
+                          <option selected disabled>Select a year</option>
+                          <option value="B">2018-2022</option>
+                          <option value="C">2019-2023</option>
+                          <option value="D">2020-2024</option>
+                          <option value="E">2021-2025</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group right">
+                    <label class="label-title">Department <span class="required">*</span></label>
+                    <div class="input-container">
+                        <i class="fa fa-book icon"></i>
+                        <select class="form-input" id="level">
+                          <option selected disabled>Department</option>
+                          <option value="E">CIVIL</option>
+                          <option value="B">CSE</option>
+                          <option value="D">ECE</option>
+                          <option value="C">EEE</option>
+                          <option value="E">MECH</option>                        
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-footer">
+            <span style="color: #ff7979;">*</span><span>&nbsp;required</span>
+            <button type="submit" class="btn">Create</button>
+        </div>
+
+    </form>
+    <script>
+        var rangeLabel = document.getElementById("range-label");
+        var experience = document.getElementById("experience");
+
+        function change() {
+            rangeLabel.innerText = experience.value + "K";
+        }
+    </script>
+
+</body>
+
+</html>

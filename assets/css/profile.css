@@ -1,0 +1,619 @@
+body {
+    color: #14171a;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body.segoe {
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.logocenter {
+    font-size: 23px !important;
+    margin-top: 11px;
+    color: white;
+}
+
+.topcontainer {
+    background: #FFF;
+    height: 100%;
+}
+
+#submit_button {
+    background-color: #1DA1F2;
+    border: 1px solid #1DA1F2;
+    border-radius: 100px;
+    box-shadow: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    height: auto;
+    line-height: 24px;
+    padding: 12px 20px;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    width: 392px;
+}
+
+.profilecard {
+    width: 290px;
+    float: left;
+    background: #FFF;
+    margin: 10px;
+    position: relative;
+}
+
+.profilecardhead {
+    background-color: #1DA1F2;
+    height: 95px;
+}
+
+.profilecardimagediv {
+    margin: -30px 0 0 8px;
+    padding: 1px;
+    background: #FFF;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.profilecardimagediv img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 2px solid #FFF;
+}
+
+.profilecardnameidcont {
+    position: absolute;
+    top: 103px;
+    left: 90px;
+    width: 185px;
+}
+
+.profilecardnamecont {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 25px;
+    margin: -1px 0 -2px;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal
+}
+
+#profilecardname {
+    color: inherit;
+    text-transform: uppercase;
+}
+
+#profilecarduid {
+    color: #667786;
+    font-size: 14px;
+    padding-right: 5px;
+    text-transform: uppercase;
+}
+
+.profilecardstatsdiv {
+    padding: 16px;
+}
+
+.profilecardstatslist {
+    table-layout: fixed;
+    box-sizing: border-box;
+    display: table;
+    margin: 0;
+    min-width: 100%;
+    padding: 0;
+    list-style: outside none;
+}
+
+.profilecardstatslistitem {
+    width: 1%;
+    vertical-align: bottom;
+    display: table-cell;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1;
+    overflow: hidden;
+    transition: all 0.15s ease-in-out 0s;
+    text-align: inherit;
+}
+
+.dispblk {
+    display: block;
+}
+
+.statslistitemhead {
+    color: #657786;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0, 02em;
+    line-height: 16px;
+    overflow: hidden;
+    transition: color 0.15s ease-in-out 0s;
+    display: block;
+}
+
+.statslistitemcount {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 3px;
+    transition: color .15s ease-in-out 0s;
+    color: #1DA1F2;
+}
+
+.rightcontainer {
+    width: 600px;
+    margin: 20px auto;
+}
+
+.posttweetcontainer {
+    border-radius: 1em;
+    border: 1px solid #4AB3F4;
+    background: #00c3ff;
+    padding: 10px 12px;
+    position: relative;
+}
+
+.posttweetprofimg {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    left: 28px;
+    top: 13px;
+    border-radius: 50%;
+}
+
+.ml56px {
+    margin-left: 56px;
+}
+
+.ml58px {
+    margin-left: 58px;
+}
+
+.mt10px {
+    margin-top: 10px;
+}
+
+.posttweettacontainer {
+    border-radius: 8px;
+    border: 1px solid #4AB3F4;
+    border-image: none;
+    line-height: 20px;
+    box-shadow: 0px 0px 0px 1px #4AB3F4;
+    background-color: rgb(255, 255, 255);
+}
+
+.posttweetta {
+    border-width: 1px 1px 0px;
+    border-style: solid solid none;
+    border-color: rgb(230, 236, 240) rgb(230, 236, 240) currentColor;
+    margin: 0px;
+    padding: 8px;
+    outline: 0px;
+    border-radius: 8px;
+    border-image: none;
+    width: 100%;
+    height: 50px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    box-sizing: border-box;
+    opacity: 0.8;
+    background-color: rgb(255, 255, 255);
+}
+
+.posttweetcountcont {
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.posttweetcount {
+    margin-right: 10px;
+    display: block;
+    float: right;
+}
+
+.posttweetbutcont {
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.posttweetbut {
+    padding: 6px 16px;
+    border-radius: 100px;
+    border: 1px solid #1DA1F2;
+    border-image: none;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+    position: relative;
+    cursor: pointer;
+    float: right;
+    box-shadow: none;
+    background-color: #1DA1F2;
+}
+
+.tweetscontainer {
+    background: rgb(255, 255, 255);
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.tweetcontainer {
+    margin: 0px;
+    padding: 10px;
+    overflow: hidden;
+    border-bottom-color: rgb(230, 236, 240);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+.tweetprofimg {
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    margin-right: 10px;
+    float: left;
+}
+
+.tweetprofname {
+    color: #14171a;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.tweetprofuid {
+    color: #657786;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.tweetstats {
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.tweetstats i {
+    color: rgb(101, 119, 134);
+    font-size: 16px;
+}
+
+.tweetstatscount {
+    color: rgb(101, 119, 134);
+    line-height: 1;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 6px;
+}
+
+.red i,
+.red span {
+    color: #00c3ff !important;
+}
+
+body {
+    background-color: #e6ecf0;
+    padding-top: 54px;
+}
+
+a {
+    color: #1DA1F2;
+}
+
+@media screen and (min-width: 1236px) {
+    .container {
+        width: 1190px;
+    }
+}
+
+
+/* Top Navbar elements' styles */
+
+.navbar {
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.navbar-nav>li a {
+    color: #66757f;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.input-search {
+    font-size: 13px;
+}
+
+.input-search,
+.btn-search {
+    background-color: #f5f8fa;
+    border-radius: 21px;
+    border: 1px solid #e6ecf0;
+}
+
+.btn-search {
+    background-color: #fff;
+}
+
+.navbar-search-icon {
+    color: #66757f;
+}
+
+.btn-circle {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-image: url(https://pbs.twimg.com/profile_images/679974972278849537/bzzb-6H4_normal.jpg);
+}
+
+.btn-search-bar {
+    border-radius: 100px;
+    border: 1px solid #1da1f2;
+    color: #fff;
+    background-color: #4AB3F4;
+    border-color: transparent;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.btn-search-bar:hover {
+    background-color: #1DA1F2;
+    border-color: #1DA1F2;
+    cursor: pointer;
+}
+
+.navbar-form {
+    margin-right: 15px;
+    float: right;
+}
+
+.navbar-user-dropdown {
+    margin-right: 15px;
+}
+
+
+/* END: Top Navbar elements' styles */
+
+.profile-background {
+    height: 320px;
+    background-image: url(https://img.freepik.com/free-vector/black-wide-technology-background_79145-249.jpg?size=626&ext=jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+/* Main avatar */
+
+.avatar-container {
+    bottom: -87px;
+    left: 10px;
+    position: absolute;
+    transition: bottom .3s;
+    z-index: 3;
+}
+
+.avatar {
+    background: #fff;
+    background-image: url(https://img.freepik.com/free-photo/beautiful-sunset-mountains-landscape-with-sun-light-shining-through-orange-clouds-fog_146671-18476.jpg?size=626&ext=jpg&ga=GA1.2.1468765807.1614932685);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    height: 200px;
+    position: relative;
+    width: 200px;
+}
+
+
+/* END: Main avatar */
+
+
+/* Stats Navbar elements' styles */
+
+.profile-stats {
+    background-color: #fff;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.profile-stats ul {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.profile-stats li {
+    display: inline-block;
+}
+
+.profile-stats a {
+    padding: 10px 16px;
+    display: block;
+    text-align: center;
+}
+
+.profile-stats-item {
+    color: #657786;
+    display: block;
+}
+
+.profile-stats-item-active {
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-color: #1DA1F2 !important;
+}
+
+.profile-stats-item-label {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.profile-stats-item-number {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/* END: Stats Navbar elements' styles */
+
+
+/* Main content elements' styles */
+
+
+/* Left column*/
+
+.profile-header {
+    margin-top: 35px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.profile-element {
+    color: #657786;
+    display: block;
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+.profile-fullname {
+    color: #000;
+}
+
+.profile-website {
+    color: #1DA1F2 !important;
+    cursor: pointer;
+}
+
+.profile-website:hover {
+    text-decoration: underline !important;
+}
+
+.tweet-to-btn {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+
+/* END: Left column*/
+
+
+/* Main column*/
+
+.main-content {}
+
+.tweet-list {
+    list-style: none;
+    margin: 8px 4px 0;
+    padding: 0;
+}
+
+.tweet-card {
+    background-color: #fff;
+    border-bottom: 1px solid #e6ecf0;
+    min-height: 52px;
+    padding: 9px 12px;
+}
+
+.tweet-content {
+    margin-left: 58px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: normal;
+}
+
+.tweet-card-avatar {
+    border-radius: 50%;
+    height: 48px;
+    width: 48px;
+    float: left;
+    margin-top: 3px;
+    margin-left: -58px;
+}
+
+.tweet-footer-btn {
+    margin-right: 30px;
+}
+
+.tweet-footer-btn i,
+.tweet-footer-btn span {
+    color: #657786;
+    font-size: 16px;
+}
+
+.tweet-footer-btn span {
+    margin-left: 8px;
+}
+
+
+/* END Main column*/
+
+
+/* Right column*/
+
+.pic-col {
+    margin: 2px;
+    padding: 2px;
+}
+
+.right-col {
+    padding-left: 0;
+}
+
+.content-panel {
+    margin: 10px 0 0;
+    background-color: #fff;
+    line-height: 16px;
+    padding: 15px;
+}
+
+.content-panel h4 {
+    display: inline-block;
+}
+
+.content-panel small {
+    font-size: 66%;
+    margin-left: 6px;
+}
+
+.content-panel li {
+    min-height: 70px;
+}
+
+.btn-follow {
+    border-color: #1DA1F2;
+    color: #1DA1F2;
+    background-color: #fff;
+    border: 1px solid #1da1f2;
+    display: block;
+    font-size: 12px;
+    line-height: 16px;
+    padding: 4px 12px;
+    border-radius: 100px;
+    box-shadow: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    min-width: 89px;
+}
+
+.btn-follow:hover {
+    background-color: #E8F5FD;
+}
+
+
+/* END: Right column*/
+
+
+/* END: Main content elements' styles */
