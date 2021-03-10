@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="./assets/css/login.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/v4-shims.css">
+
+</head>
+
+<body>
+    <form class="signup-form" onsubmit="postData();return false;">
+        <div class="form-header">
+            <h1>Login</h1>
+        </div>
+        <div class="form-body">
+            <div class="horizontal-group first">
+                <div class="form-group">
+                    <label for="name" class="label-title">Username <span class="required">*</span></label>
+                    <div class="input-container">
+                        <i class="fas fa-user icon"></i>
+                        <input type="name" id="name" class="form-input" placeholder="username" required="required">
+                    </div>
+                </div>
+            </div>
+            <div class="horizontal-group second">
+                <div class="form-group">
+                    <label for="password" class="label-title">Password <span class="required">*</span></label>
+                    <div class="input-container">
+                        <i class="fa fa-lock icon"></i>
+                        <input type="password" id="password" class="form-input" placeholder="********" required="required">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-footer">
+            <div>
+                <input type="submit" class="btn" value="Log in" />
+                <a href="#" class="btn2 external1">Forgot Password</a>
+                <a href="#" class="btn2 external2">Register</a>
+            </div>
+        </div>
+
+    </form>
+    <script src="./assets/js/register.js"></script>
+</body>
+
+</html>
