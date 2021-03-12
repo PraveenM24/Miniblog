@@ -34,7 +34,7 @@ function postData() {
         return false;
     }
 
-    fetch('https://tpgitminiblog.herokuapp.com/login', {
+    fetch('https://tpgitminiblog.herokuapp.com/register', {
             method: 'POST',
             body: JSON.stringify({
                 firstname: fname,
