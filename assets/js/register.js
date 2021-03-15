@@ -52,7 +52,7 @@ function postData() {
             return response.json();
         })
         .then(function(data) {
-            window.location.href = ("./index.html")
+            window.location.href = ("./login.html")
         })
         .catch(function(error) {
             console.log(error);

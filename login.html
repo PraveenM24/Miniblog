@@ -11,16 +11,17 @@
 </head>
 
 <body>
-    <form class="signup-form" onsubmit="postData();return false;">
+    <form class="signup-form" onsubmit="validate();return false;">
         <div class="form-header">
             <h1>Login</h1>
         </div>
         <div class="form-body">
+            <div class="Error" id="Error"></div>
             <div class="horizontal-group first">
                 <div class="form-group">
                     <label for="name" class="label-title">Email</label>
                     <div class="input-container">
-                        <i class="fas fa-user icon"></i>
+                        <i class="fas fa-user icon" id="nicon"></i>
                         <input type="name" id="name" class="form-input" placeholder="jhondoe@xyz.com" required="required">
                     </div>
                 </div>
@@ -29,7 +30,7 @@
                 <div class="form-group">
                     <label for="password" class="label-title">Password</label>
                     <div class="input-container">
-                        <i class="fa fa-lock icon"></i>
+                        <i class="fa fa-lock icon" id="pwdicon"></i>
                         <input type="password" id="password" class="form-input" placeholder="********" required="required">
                     </div>
                 </div>
@@ -43,7 +44,7 @@
             </div>
         </div>
     </form>
-    <script src="./assets/js/register.js"></script>
+    <script src="./assets/js/login.js"></script>
 </body>
 
 </html>
