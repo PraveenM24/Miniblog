@@ -8,7 +8,11 @@ function validate() {
             var password = document.getElementById('password').value;
             for (var i = 0; i < data.length; i++) {
                 if (name == data[i].email && password == data[i].password) {
-                    window.location.href = ('./profile.html');
+                    var fname = data[i].firstname + data[i].lastname;
+                    let credential = {
+                        name: fname
+                    };
+                    window.location.href = ('./index.html');
                 } else {
                     var holder1 = document.getElementById('name')
                     var holder2 = document.getElementById('nicon')

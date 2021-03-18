@@ -1,11 +1,9 @@
-console.log('Hello World!');
-
 const form = document.querySelector('form'); // grabbing an element on the page
 const errorElement = document.querySelector('.error-message');
 const loadingElement = document.querySelector('.loading');
 const mewsElement = document.querySelector('.mews');
 const loadMoreElement = document.querySelector('#loadMore');
-const API_URL = (window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost') ? 'http://localhost:5000/v2/mews' : 'https://meower-api.now.sh/v2/mews';
+const API_URL = 'https://tpgitminiblog.herokuapp.com/posts';
 
 let skip = 0;
 let limit = 5;
@@ -29,6 +27,8 @@ form.addEventListener('submit', (event) => {
     const name = formData.get('name');
     const content = formData.get('content');
 
+    var created = new Date();
+
     if (name.trim() && content.trim()) {
         errorElement.style.display = 'none';
         form.style.display = 'none';
@@ -36,7 +36,8 @@ form.addEventListener('submit', (event) => {
 
         const mew = {
             name,
-            content
+            content,
+            created
         };
 
         fetch(API_URL, {
@@ -84,34 +85,35 @@ function listAllMews(reset = true) {
         skip = 0;
         finished = false;
     }
-    fetch(`${API_URL}?skip=${skip}&limit=${limit}`)
-        .then(response => response.json())
-        .then(result => {
-            result.mews.forEach(mew => {
+    var table = document.getElementById('table')
+    fetch('https://tpgitminiblog.herokuapp.com/posts')
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            length = data.length;
+            for (var i = length - 1; i >= 0; i--) {
+
                 const div = document.createElement('div');
 
                 const header = document.createElement('h3');
-                header.textContent = mew.name;
+                header.textContent = data[i].name;
 
                 const contents = document.createElement('p');
-                contents.textContent = mew.content;
+                contents.textContent = data[i].content;
 
                 const date = document.createElement('small');
-                date.textContent = new Date(mew.created);
+                date.textContent = new Date(data[i].created);
 
                 div.appendChild(header);
                 div.appendChild(contents);
                 div.appendChild(date);
 
                 mewsElement.appendChild(div);
-            });
-            loadingElement.style.display = 'none';
-            if (!result.meta.has_more) {
-                loadMoreElement.style.visibility = 'hidden';
-                finished = true;
-            } else {
-                loadMoreElement.style.visibility = 'visible';
+
             }
-            loading = false;
+        })
+        .catch(function(error) {
+            console.log(error);
         });
 }
