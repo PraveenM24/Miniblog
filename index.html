@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
 
 <head>
@@ -16,6 +15,17 @@
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="./assets/js/profile.js"></script>
+    <script src="./assets/js/login.js"></script>
+    <link rel="stylesheet" href="./assets/css/emojionearea.min.css">
+    <script type="text/javascript" src="./assets/js/emojionearea.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#content").emojioneArea({
+
+                pickerPosition: "right"
+            });
+        });
+    </script>
     <script type="text/javascript">
         function preventBack() {
             window.history.forward();
@@ -25,18 +35,6 @@
             null
         };
     </script>
-
-    <style>
-        .visibility {
-            display: block !important;
-        }
-        
-        #container {
-            display: none;
-        }
-    </style>
-
-
 </head>
 
 <body class="segoe" style="background: rgb(230, 236, 240);">
@@ -44,9 +42,7 @@
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse container">
-            <!-- Navbar navigation links -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="#"><i class="octicon octicon-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a>
@@ -67,17 +63,18 @@
         <form class="mew-form">
             <div class="error-message">
             </div>
-            <label for="name">Name</label>
-            <input class="u-full-width" type="text" id="name" name="name">
-            <label for="content">Message</label>
-            <textarea class="u-full-width" type="text" id="content" name="content"></textarea>
-            <button class="button-primary">Post</button>
+            <input class="u-full-width" type="text" id="name" name="name" placeholder="Name" hidden>
+            <script>
+                document.getElementById('name').value = name;
+            </script>
+
+            <textarea class="u-full-width" type="text" id="content" name="content" placeholder="Write something here.."></textarea><button class="button-primary">Post</button>
+
         </form>
         <div class="mews">
 
         </div>
         <div class="button-container">
-            <!-- <button id="loadMoreButton" class="button-primary" style="visibility: hidden">Load More Mews</button> -->
             <p id="loadMore">Loading...</p>
         </div>
         <div class="loading">

@@ -5,6 +5,9 @@ const mewsElement = document.querySelector('.mews');
 const loadMoreElement = document.querySelector('#loadMore');
 const API_URL = 'https://tpgitminiblog.herokuapp.com/posts';
 
+/*const { Credential } = require('./login.js');
+console.log(Credential);*/
+
 let skip = 0;
 let limit = 5;
 let loading = false;
