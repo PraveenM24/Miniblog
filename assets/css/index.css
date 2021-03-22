@@ -1,16 +1,93 @@
+@media screen and (max-width:728px) {
+    #sidenav {
+        visibility: hidden;
+    }
+    #sidenav2 {
+        visibility: hidden;
+    }
+    #mew-form {
+        width: 80%;
+    }
+    #mews {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:900px) {
+    #sidenav {
+        margin: 0px;
+    }
+}
+
 .title {
     text-align: center;
 }
 
 .error-message {
-    background: #ff9b9b;
+    background: #BBBBBB;
     color: white;
     border-radius: 5px;
     padding: 10px;
 }
 
+.sidenav {
+    border-radius: 3px;
+    height: 90%;
+    width: 25%;
+    margin: 7px 0px 0px 20px;
+    position: fixed;
+    z-index: 1;
+    top: 10%;
+    left: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav h3 {
+    text-align: center;
+    color: #66757F;
+    font-weight: bolder;
+}
+
+.sidenav ul {
+    list-style-type: none;
+    margin-left: 40px;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.sidenav li:hover {
+    color: steelblue;
+}
+
+.sidenav .iconify {
+    margin-right: 20px;
+}
+
+.sidenav2 {
+    border-radius: 3px;
+    height: 90%;
+    width: 25%;
+    margin: 7px 0px 0px 20px;
+    position: fixed;
+    z-index: 1;
+    top: 10%;
+    left: 72.5%;
+    background-color: #fff;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav2 h3 {
+    text-align: center;
+    color: #66757F;
+    font-weight: bolder;
+}
+
 main {
     font-size: 15px;
+    padding-top: 54px;
 }
 
 .mew-form {
@@ -19,7 +96,7 @@ main {
 
 .mew-form,
 .loading {
-    width: 50%;
+    width: 45%;
     margin: 0 auto;
 }
 
@@ -28,7 +105,7 @@ main {
 }
 
 .mews {
-    width: 50%;
+    width: 45%;
     margin: 0 auto;
 }
 
@@ -51,11 +128,20 @@ main {
 }
 
 .button-primary {
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+    width: 100%;
 }
 
 .button-container {
     display: flex;
     justify-content: center;
     margin: 1em;
+}
+
+.iconify {
+    color: #BBBBBB;
+}
+
+.iconify:hover {
+    color: #666666;
 }

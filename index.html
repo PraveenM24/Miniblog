@@ -3,26 +3,43 @@
 
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <title>Home</title>
-    <link href="https://necolas.github.io/normalize.css/7.0.0/normalize.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/profile.css">
     <link rel="stylesheet" href="./assets/css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
     <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.min.css'>
+    <link rel="stylesheet" href="./assets/css/emojionearea.min.css">
+
+    <style>
+        @media screen and (max-width:900px) {
+            #navbar a {
+                visibility: visible;
+            }
+            .button-primary {
+                color: black;
+                text-align: right;
+            }
+            .nav-link:hover {
+                color: blue;
+            }
+        }
+    </style>
+
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="./assets/js/profile.js"></script>
     <script src="./assets/js/login.js"></script>
-    <link rel="stylesheet" href="./assets/css/emojionearea.min.css">
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <script type="text/javascript" src="./assets/js/emojionearea.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             $("#content").emojioneArea({
-
-                pickerPosition: "right"
+                pickerPosition: "down"
             });
         });
     </script>
@@ -38,7 +55,7 @@
 </head>
 
 <body class="segoe" style="background: rgb(230, 236, 240);">
-    <nav class="navbar navbar-toggleable-md fixed-top">
+    <nav class="navbar navbar-toggleable-md fixed-top" id="navbar" style="visibility: visible;">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -59,8 +76,20 @@
             </ul>
         </div>
     </nav>
+
+    <div class="sidenav" id="sidenav">
+        <h3>TPGIT News</h3>
+        <ul class="navbar-nav">
+            <li><i class="iconify" data-icon="octicon:link-16"></i><a class="nav-link" href="#" style="color: black;font-weight: normal; display: inline-block;">Alumni meet 2020-21 </a>
+            </li>
+            <li><i class="iconify" data-icon="octicon:link-16"></i><a class="nav-link" href="#" style="color: black;font-weight: normal; display: inline; ">Inauguration ceremony of CSE department</a>
+            </li>
+            <li><i class="iconify" data-icon="octicon:link-16"></i><a class="nav-link" href="#" style="color: black;font-weight: normal; display: inline-block;">Culturals 2020-21</a>
+            </li>
+        </ul>
+    </div>
     <main>
-        <form class="mew-form">
+        <form class="mew-form" id="mew-form">
             <div class="error-message">
             </div>
             <input class="u-full-width" type="text" id="name" name="name" placeholder="Name" hidden>
@@ -68,11 +97,11 @@
                 document.getElementById('name').value = name;
             </script>
 
-            <textarea class="u-full-width" type="text" id="content" name="content" placeholder="Write something here.."></textarea><button class="button-primary">Post</button>
+            <textarea class="u-full-width" type="text" id="content" name="content" placeholder="Write something here.." style="border-color:white;"></textarea>
+            <button class="button-primary" style="text-align: right;color: black; background-color: #fff; border-color: #fff; border-radius: 0px 0px 3px 3px ;"><span class="iconify" data-icon="octicon:paper-airplane-16" data-inline="false"></span></button>
 
         </form>
-        <div class="mews">
-
+        <div class="mews" id="mews">
         </div>
         <div class="button-container">
             <p id="loadMore">Loading...</p>
@@ -81,6 +110,10 @@
             <img src="loading.gif" alt="">
         </div>
     </main>
+
+    <div class="sidenav2" id="sidenav2">
+        <h3>Inbox</h3>
+    </div>
     <script src="./assets/js/index.js"></script>
 </body>
 

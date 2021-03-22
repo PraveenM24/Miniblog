@@ -71,8 +71,11 @@ form.addEventListener('submit', (event) => {
             loadingElement.style.display = 'none';
         });
     } else {
-        errorElement.textContent = 'Name and content are required!';
+        errorElement.textContent = 'Content is missing..';
         errorElement.style.display = '';
+        setTimeout(function() {
+            errorElement.style.display = 'none';
+        }, 3000);
     }
 });
 
