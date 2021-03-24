@@ -102,8 +102,12 @@ function listAllMews(reset = true) {
 
                 const div = document.createElement('div');
 
-                const header = document.createElement('h3');
-                header.textContent = data[i].name;
+                const header = document.createElement('a');
+                header.setAttribute('href', './profile.html');
+                header.setAttribute('target', '_blank');
+                header.setAttribute('class', 'name');
+                header.innerHTML = data[i].name
+                    //header.textContent = data[i].name;
 
                 const contents = document.createElement('p');
                 contents.textContent = data[i].content;

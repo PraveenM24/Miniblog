@@ -109,6 +109,16 @@ main {
     margin: 0 auto;
 }
 
+.name {
+    color: black;
+    text-decoration: none;
+}
+
+.name:hover {
+    color: #66757F;
+    text-decoration: none;
+}
+
 .mews>div {
     background: hsl(0, 0%, 95%);
     padding: 12px;
