@@ -1,6 +1,6 @@
 function validate() {
     var flag = 0;
-    fetch('https://tpgitminiblog.herokuapp.com/login')
+    fetch('https://tpgitminiblog.herokuapp.com/register')
         .then(function(response) {
             return response.json();
         })
