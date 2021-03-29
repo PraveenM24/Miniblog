@@ -9,6 +9,7 @@ function validate() {
             var password = document.getElementById('password').value;
             for (var i = 0; i < data.length; i++) {
                 if (name == data[i].email && password == data[i].password) {
+                    window.mailid = data[i].email;
                     window.name = data[i].firstname + " " + data[i].lastname;
                     window.location.href = ('./index.html');
                     flag = 1

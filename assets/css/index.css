@@ -155,3 +155,68 @@ main {
 .iconify:hover {
     color: #666666;
 }
+
+.dot {
+    height: 8px;
+    width: 8px;
+    background-color: green;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.users {
+    background-color: transparent;
+    border: 0px solid #fff;
+    padding: 0px 5px;
+}
+
+.users:focus {
+    border: none;
+    outline: none;
+}
+
+.messages {
+    margin-left: 10px;
+}
+
+.messages li {
+    text-align: right;
+    float: right;
+    font-size: 15px;
+    padding-left: 10px;
+    margin-bottom: 5px;
+    border-color: white;
+    border-width: 2px;
+    border-radius: 2px;
+    background-color: rgb(166, 201, 202);
+    width: 55%;
+}
+
+.messages .rmsg {
+    text-align: left;
+    float: left;
+}
+
+.submit .message {
+    padding: 10px;
+    font-size: 15px;
+    box-sizing: 15px;
+    width: 100%;
+    line-height: 10px;
+    position: absolute;
+    bottom: 10px;
+}
+
+.submit-btn {
+    background-color: transparent;
+    border: 0px solid #fff;
+    padding: 0px;
+    position: absolute;
+    bottom: 12px;
+    right: 15px;
+}
+
+.submit-btn:focus {
+    border: none;
+    outline: none;
+}

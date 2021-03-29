@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
     <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.min.css'>
     <link rel="stylesheet" href="./assets/css/emojionearea.min.css">
 
@@ -86,6 +87,82 @@
         };
     </script>
 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.3/socket.io.js" integrity="sha512-2RDFHqfLZW8IhPRvQYmK9bTLfj/hddxGXQAred2wNZGkrKQkLGj8RCkXfRJPHlDerdHHIzTFaahq4s/P4V6Qig==" crossorigin="anonymous"></script>
+
+    <script>
+        // creating io instance
+        var io = io("http://localhost:3000");
+
+        var receiver = "";
+
+        var sender = "";
+
+        function enterName() {
+            const button = document.getElementById('submit-btn');
+            button.disabled = true;
+            // get username
+            var name = document.getElementById("mname").value;
+
+            // send it to server
+            io.emit("user_connected", name);
+
+            // save my name in global variable
+            sender = name;
+
+            // prevent the form from submitting
+            return false;
+        }
+
+        // listen from server
+        io.on("user_connected", function(username) {
+            var html = "";
+            html += "<li><span class='dot'></span><button class='users' onclick='onUserSelected(this.innerHTML);'>" + username + "</button></li>";
+            document.getElementById("users").innerHTML += html;
+        });
+
+        function onUserSelected(username) {
+            // save selected user in global variable
+            receiver = username;
+
+            $.get("https://tpgitminiblog.herokuapp.com/messages", function(data) {
+                for (var i = 0; i <= data.length; i++) {
+                    if (data[i].sender == sender && data[i].receiver == receiver) {
+                        var html = "";
+                        html += "<li>" + data[i].message + "</li>";
+                        document.getElementById("messages").innerHTML += html;
+                    }
+                }
+            });
+        }
+
+        function sendMessage() {
+            var message = document.getElementById("message").value;
+            io.emit("send_message", {
+                sender: sender,
+                receiver: receiver,
+                message: message
+            });
+
+            var html = "";
+            html += "<li>" + message + "</li>";
+            document.getElementById("messages").innerHTML += html;
+
+            // prevent form from submitting
+            return false;
+        }
+        // listen from server
+        io.on("new_message", function(data) {
+            var html = "";
+            html += "<li class='rmsg'>" + data.message + "</li>";
+            document.getElementById("messages").innerHTML += html;
+        });
+    </script>
+
+
+
+
 </head>
 
 <body class="segoe" style="background: rgb(230, 236, 240);">
@@ -124,7 +201,6 @@
             </li>
         </ul>
     </div>
-
     <main>
         <form class="mew-form" id="mew-form">
             <div class="error-message">
@@ -149,10 +225,37 @@
     </main>
 
     <div class="sidenav2" id="sidenav2">
-        <h3>Inbox</h3>
+        <h3>Chat Box</h3>
+
+        <div class="container">
+            <form onsubmit="return enterName();">
+                <input id="mname" placeholder="Enter name" hidden>
+                <script>
+                    document.getElementById('mname').value = name;
+                </script>
+                <input style="margin-left: 40.2%;background-color: transparent;border: 0px solid #fff;padding: 0px;" id="submit-btn" type="submit" value="Go Online">
+            </form>
+            <div class="row">
+                <div class="row" style="height: 140px;margin-left: 0px;">
+                    <div class="col" style="height: 140px;position: absolute; overflow-y:scroll">
+                        <ul id="users" style="list-style-type: none;"></ul>
+                    </div>
+                </div>
+                <div class="row" style="height: 360px;margin-left: 15px;">
+                    <div class="col" style="height: 360px;position: absolute; overflow-y:scroll; top:200px">
+                        <ul id='messages' style="list-style-type: none;" class="messages"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <form class="submit">
+            <input class="message" id="message" placeholder="Type a message ">
+            <button class="fa fa-paper-plane fa-2x submit-btn" onclick="return sendMessage();"></button>
+        </form>
     </div>
 
-    <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/index.js "></script>
 
 </body>
 
