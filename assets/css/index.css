@@ -176,6 +176,7 @@ main {
 }
 
 .messages {
+    margin-top: 30px;
     margin-left: 10px;
 }
 
@@ -183,7 +184,7 @@ main {
     text-align: right;
     float: right;
     font-size: 15px;
-    padding-left: 10px;
+    padding: 5px 10px;
     margin-bottom: 5px;
     border-color: white;
     border-width: 2px;
@@ -195,6 +196,7 @@ main {
 .messages .rmsg {
     text-align: left;
     float: left;
+    background-color: rgb(228, 228, 228);
 }
 
 .submit .message {

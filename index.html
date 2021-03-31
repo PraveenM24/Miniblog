@@ -123,6 +123,7 @@
         });
 
         function onUserSelected(username) {
+            $('#messages').empty();
             // save selected user in global variable
             receiver = username;
 
@@ -132,9 +133,16 @@
                         var html = "";
                         html += "<li>" + data[i].message + "</li>";
                         document.getElementById("messages").innerHTML += html;
+                    } else if (data[i].receiver == sender && data[i].sender == receiver) {
+                        var html = "";
+                        html += "<li class='rmsg'>" + data[i].message + "</li>";
+                        document.getElementById("messages").innerHTML += html;
                     }
                 }
             });
+            document.getElementById('msg-title').innerHTML = receiver;
+            var objDiv = document.getElementById("messages");
+            objDiv.scrollTop = objDiv.scrollHeight;
         }
 
         function sendMessage() {
@@ -154,9 +162,14 @@
         }
         // listen from server
         io.on("new_message", function(data) {
+            if (data.sender != receiver) {
+                onUserSelected(data.sender);
+            }
             var html = "";
             html += "<li class='rmsg'>" + data.message + "</li>";
             document.getElementById("messages").innerHTML += html;
+            document.getElementById('msg-title').innerHTML = data.sender;
+            receiver = data.sender;
         });
     </script>
 
@@ -219,11 +232,10 @@
         <div class="button-container">
             <p id="loadMore">Loading...</p>
         </div>
-        <div class="loading">
+        <!--<div class="loading">
             <img src="loading.gif" alt="">
-        </div>
+        </div>-->
     </main>
-
     <div class="sidenav2" id="sidenav2">
         <h3>Chat Box</h3>
 
@@ -232,6 +244,7 @@
                 <input id="mname" placeholder="Enter name" hidden>
                 <script>
                     document.getElementById('mname').value = name;
+                    console.log(values.mailid);
                 </script>
                 <input style="margin-left: 40.2%;background-color: transparent;border: 0px solid #fff;padding: 0px;" id="submit-btn" type="submit" value="Go Online">
             </form>
@@ -241,8 +254,10 @@
                         <ul id="users" style="list-style-type: none;"></ul>
                     </div>
                 </div>
+
                 <div class="row" style="height: 360px;margin-left: 15px;">
-                    <div class="col" style="height: 360px;position: absolute; overflow-y:scroll; top:200px">
+                    <div class="col" style="height: 350px;position: absolute; overflow-y:scroll; top:200px">
+                        <h4 id="msg-title" style="text-align: center;line-height: 20px;position: relative;"></h4>
                         <ul id='messages' style="list-style-type: none;" class="messages"></ul>
                     </div>
                 </div>
