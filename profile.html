@@ -14,6 +14,8 @@
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="./assets/js/profile.js"></script>
+
+
     <script type="text/javascript">
         function preventBack() {
             window.history.forward();
@@ -69,6 +71,23 @@
 </head>
 
 <body class="segoe" style="background: rgb(230, 236, 240);">
+    <script src="./assets/js/login.js">
+    </script>
+    <script>
+        fetch('https://tpgitminiblog.herokuapp.com/register')
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(data){
+                for(var i = 0;i < data.length;i++){
+                    var check = data[i].firstname + " "+data[i].lastname;
+                    if (name == check) {
+                        document.getElementById('').innerHTML = data[i].batch;
+                    }
+                }
+            })
+
+    </script>
 
     <div class="se-pre-con"></div>
 
