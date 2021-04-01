@@ -11,10 +11,17 @@
 }
 
 .blog-title{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
     color: #030d14;
 }
 
+.blog-sub-title{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: #f1f1f1;
+}
 .details{
+    text-align:justify;
     height: 320px;
     padding: 10px 40px;
 }
