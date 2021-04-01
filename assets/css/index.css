@@ -88,10 +88,12 @@
 main {
     font-size: 15px;
     padding-top: 54px;
+    
 }
 
 .mew-form {
     padding: 25px 0px;
+    
 }
 
 .mew-form,
@@ -153,5 +155,5 @@ main {
 }
 
 .iconify:hover {
-    color: #666666;
+    color: #eee5e5;
 }
