@@ -1,0 +1,20 @@
+.main{
+    height:80%;
+    background-color: #ffffff;
+    margin-top:7.9%; 
+    border-radius: 3px;
+}
+
+.content{
+    margin: 0 auto; 
+    text-align:center;
+}
+
+.blog-title{
+    color: #030d14;
+}
+
+.details{
+    height: 320px;
+    padding: 10px 40px;
+}
