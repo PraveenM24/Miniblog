@@ -1,0 +1,154 @@
+!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <title>Home</title>
+    <link rel="stylesheet" href="./assets/css/profile.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.min.css'>
+    <link rel="stylesheet" href="./assets/css/emojionearea.min.css">
+
+    <style>
+        @media screen and (max-width:900px) {
+            #navbar a {
+                visibility: visible;
+            }
+            .button-primary {
+                color: black;
+                text-align: right;
+            }
+            .nav-link:hover {
+                color: blue;
+            }
+        }
+    </style>
+
+    <style>
+        .no-js #loader {
+            display: none;
+        }
+        
+        .js #loader {
+            display: block;
+            position: absolute;
+            left: 100px;
+            top: 0;
+        }
+        
+        .se-pre-con {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url(./assets/images/loader-64x/test2.gif)center no-repeat #fff;
+        }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+    <script>
+        //paste this code under head tag or in a seperate js file.
+        // Wait for window load
+        $(window).load(function() {
+            // Animate loader off screen
+            $(".se-pre-con").fadeOut("slow");;
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="./assets/js/profile.js"></script>
+    <script src="./assets/js/login.js"></script>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <script type="text/javascript" src="./assets/js/emojionearea.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#content").emojioneArea({
+                pickerPosition: "down"
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        function preventBack() {
+            window.history.forward();
+        }
+        setTimeout("preventBack()", 0);
+        window.onunload = function() {
+            null
+        };
+    </script>
+
+</head>
+
+<body class="segoe" style="background: rgb(230, 236, 240);">
+    <div class="se-pre-con"></div>
+
+    <nav class="navbar navbar-toggleable-md fixed-top" id="navbar" style="visibility: visible;">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse container">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#"><i class="octicon octicon-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./profile.html"><i class="octicon octicon-person"></i> Profile</a>
+                </li>
+
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item ">
+                    <a class="nav-link" href="./login.html"><i class="octicon octicon-sign-out"></i> Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="sidenav" id="sidenav">
+        <h3>Other News</h3>
+        <ul class="navbar-nav">
+            <li><i class="iconify" data-icon="octicon:link-16"></i><a class="nav-link" href="#" style="color: black;font-weight: normal; display: inline-block;">Alumni meet 2020-21 </a>
+            </li>
+            <li><i class="iconify" data-icon="octicon:link-16"></i><a class="nav-link" href="#" style="color: black;font-weight: normal; display: inline; ">Inauguration ceremony of CSE department</a>
+            </li>
+            <li><i class="iconify" data-icon="octicon:link-16"></i><a class="nav-link" href="#" style="color: black;font-weight: normal; display: inline-block;">Culturals 2020-21</a>
+            </li>
+        </ul>
+    </div>
+
+    <main class="mew-form" style="background-color: #ffffff">
+      >
+        <center>
+           <br/> <br/> <h1>CULTURAL</h1><br/>
+           <image src ="https://tse2.mm.bing.net/th?id=OIP.5KhVIMu_FHa4Xc1ebqVqHQHaHa&pid=ImgDet&rs=1"
+        width="350" height="250" </center>
+        <br/> <br/>
+           <h2>Memories are enduring treasure of the heart</h2><br/>
+              
+           <p class="mew-form" style="text-align:center"> Tpgit Alumini meet was held on 17,january in Tpgit campus,Vellore. 
+            Close to 100 Tpgians, who had graduated from the institute at diffrent 
+            times in last 25 years, and currently in industryand been a entrepreneur,
+            converged at Auditorium, Tpgit. Joining with students, faculty and staff 
+            they spent several hours together in a charged atmosphere.</p>
+                      
+        
+    </main>
+
+    <div class="sidenav2" id="sidenav2">
+        <h3>Inbox</h3>
+    </div>
+
+    <script src="./assets/js/index.js"></script>
+
+</body>
+
+</html>
