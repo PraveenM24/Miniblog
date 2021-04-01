@@ -82,12 +82,18 @@
                 for(var i = 0;i < data.length;i++){
                     var check = data[i].firstname + " "+data[i].lastname;
                     if (name == check) {
-                        document.getElementById('').innerHTML = data[i].batch;
+                        document.getElementById('test-data').innerHTML = data[i].firstname;
+                        document.getElementById('test-data1').innerHTML = data[i].lastname;
+                        document.getElementById('test-data2').innerHTML = data[i].email;
+                        document.getElementById('test-data3').innerHTML = data[i].batch;
+                        document.getElementById('test-data4').innerHTML = data[i].department;
+                        console.log(data[i]);
                     }
                 }
             })
 
     </script>
+
 
     <div class="se-pre-con"></div>
 
@@ -132,77 +138,87 @@
         })
     </script>
 
-    <div class="main-container">
-        <div class="row profile-background">
-            <div class="container">
-                <div class="avatar-container">
-                    <div class="avatar">
-                    </div>
-                </div>
-            </div>
+    
+        <div class="sidenav3" id="sidenav3">
+            <h3>TPGIT News</h3>
+            <ul class="navbar-nav">
+                <li><i class="iconify" data-icon="octicon:link-16"></i><a class="nav-link" href="#" style="color: black;font-weight: normal; display: inline-block;">Alumni meet 2020-21 </a>
+                </li>
+                <li><i class="iconify" data-icon="octicon:link-16"></i><a class="nav-link" href="#" style="color: black;font-weight: normal; display: inline; ">Inauguration ceremony of CSE department</a>
+                </li>
+                <li><i class="iconify" data-icon="octicon:link-16"></i><a class="nav-link" href="#" style="color: black;font-weight: normal; display: inline-block;">Culturals 2020-21</a>
+                </li>
+            </ul>
         </div>
-        <nav class="navbar profile-stats">
-            <div class="container">
-
-                <div class="row">
-                    <div class="col">
-
-                    </div>
-                    <div class="col-6">
-                        <ul>
-                            <li class="profile-stats-item-active">
-                                <a>
-                                    <span class="profile-stats-item profile-stats-item-label">Tweets</span>
-                                    <span class="profile-stats-item profile-stats-item-number" id="statslistitemcount">0</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a>
-                                    <span class="profile-stats-item profile-stats-item-label">Following</span>
-                                    <span class="profile-stats-item profile-stats-item-number">0</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a>
-                                    <span class="profile-stats-item profile-stats-item-label">Followers</span>
-                                    <span class="profile-stats-item profile-stats-item-number">0</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a>
-                                    <span class="profile-stats-item profile-stats-item-label">Likes</span>
-                                    <span class="profile-stats-item profile-stats-item-number">0</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col">
-
+    
+        <main>
+            <div class="main-container">
+                <div class="row profile-background">
+                    <div class="container">
+                        <div class="avatar-container">
+                            <div class="avatar">
+                            </div><br/>
+                        </div>
+                        
                     </div>
                 </div>
-            </div>
-        </nav>
-        <div class="rightcontainer" data-type="Tweet" id="container">
-            <div class="posttweetcontainer">
-                <img class="posttweetprofimg" src="http://3.bp.blogspot.com/-JCYefwq__2U/TxCfC3s1ZpI/AAAAAAAAKcM/u5mw7qPAL0w/s300-c/Camilla-Belle-6.jpg">
-                <div class="ml56px">
-                    <div class="posttweettacontainer">
-                        <textarea id="posttweetta" class="posttweetta" placeholder="What's happening?" draggable="false"></textarea>
-                        <div class="posttweetcountcont">
-                            <span class="posttweetcount"><span id="totalchars">0</span>/250</span>
+                <form class="mew-form" id="mew-form">
+                    <strong><span id="test-data"></span></strong>
+                    <strong><span id="test-data1"></span></strong><br/>
+                    <i class="fa fa-envelope icon"></i> <span id="test-data2"></span><br/>
+                    <i class="fa fa-calendar icon"></i> <span id="test-data3"></span><br/>
+                    <i class="fa fa-book icon"></i> <span id="test-data4"></span>
+                </form>
+                <div class="mews" id="mews">
+                </div>
+                
+                <nav class="navbar profile-stats">
+                    <div class="container">
+        
+                        <div class="row">
+                            <div class="col">
+        
+                            </div>
+                            <div class="col-6">
+                                <ul>
+                                    <li class="profile-stats-item-active">
+                                        <a>
+                                            <span class="profile-stats-item profile-stats-item-label">Tweets</span>
+                                            
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <span class="profile-stats-item profile-stats-item-label">Following</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <span class="profile-stats-item profile-stats-item-label">Followers</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <span class="profile-stats-item profile-stats-item-label">Likes</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col">
+        
+                            </div>
                         </div>
                     </div>
-                    <div class="posttweetbutcont">
-                        <button id="posttweetbut" class="posttweetbut">Post</button>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <ul id="tweetscontainer" class="tweetscontainer">
-
-                </ul>
-            </div>
+                </nav> 
+                
+            
+            
+        </main>
+    
+        <div class="sidenav4" id="sidenav4">
+            <h3>Inbox</h3>
         </div>
+    
     </div>
 </body>
 
