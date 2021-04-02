@@ -140,9 +140,9 @@
                     }
                 }
             });
+
+            $("#messages").scrollTop($("#messages").height());
             document.getElementById('msg-title').innerHTML = receiver;
-            var objDiv = document.getElementById("messages");
-            objDiv.scrollTop = objDiv.scrollHeight;
         }
 
         function sendMessage() {
@@ -156,6 +156,8 @@
             var html = "";
             html += "<li>" + message + "</li>";
             document.getElementById("messages").innerHTML += html;
+
+            $("#messages").scrollTop($("#messages").height());
 
             // prevent form from submitting
             return false;
@@ -191,13 +193,13 @@
                     <a class="nav-link" href="#"><i class="octicon octicon-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./profile.html"><i class="octicon octicon-person"></i> Profile</a>
+                    <a class="nav-link" href="./User/profile.html"><i class="octicon octicon-person"></i> Profile</a>
                 </li>
 
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item ">
-                    <a class="nav-link" href="./login.html"><i class="octicon octicon-sign-out"></i> Logout</a>
+                    <a class="nav-link" href="./UAuth/login.html"><i class="octicon octicon-sign-out"></i> Logout</a>
                 </li>
             </ul>
         </div>

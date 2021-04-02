@@ -16,7 +16,7 @@ function validate() {
                     };
                     window.mailid = data[i].email;
 
-                    window.location.href = ('./index.html');
+                    window.location.href = ('../index.html');
                     flag = 1
                 }
             }
