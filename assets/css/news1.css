@@ -1,0 +1,30 @@
+.main{
+   height: 1000px;
+    background-color: #ffffff;
+    margin-top:7.9%; 
+    border-radius: 3px;
+}
+
+.content{
+    margin: 0 auto; 
+    text-align:center;
+    font-style: italic;
+
+}
+
+.blog-title{
+    font-style: Times New Roman;
+    font-weight: bolder;
+    color: #030d14;
+}
+
+.blog-sub-title{
+    font-style:Verdana;
+    color: #838586;
+}
+.details{
+    text-align:justify;
+    height: 320px;
+    padding: 10px 40px;
+    font-style: arial;
+}
