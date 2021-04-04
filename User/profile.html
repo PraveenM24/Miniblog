@@ -1,94 +1,211 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="utf-8">
-    <title>Profile</title>
-    <link href="https://necolas.github.io/normalize.css/7.0.0/normalize.css" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/profile.css">
-    <link rel="stylesheet" href="../assets/css/index.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
-    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
-    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.min.css'>
-    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src="../assets/js/profile.js"></script>
-
-
-    <script type="text/javascript">
-        function preventBack() {
-            window.history.forward();
-        }
-        setTimeout("preventBack()", 0);
-        window.onunload = function() {
-            null
-        };
-    </script>
-
-    <style>
-        .visibility {
-            display: block !important;
-        }
-        
-        #container {
-            display: none;
-        }
-    </style>
-
-    <style>
-        .no-js #loader {
-            display: none;
-        }
-        
-        .js #loader {
-            display: block;
-            position: absolute;
-            left: 100px;
-            top: 0;
-        }
-        
-        .se-pre-con {
-            position: fixed;
-            left: 0px;
-            top: 0px;
-            width: 100%;
-            height: 100%;
-            z-index: 9999;
-            background: url(../assets/images/loader-64x/test2.gif)center no-repeat #fff;
-        }
-    </style>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
-    <script>
-        //paste this code under head tag or in a seperate js file.
-        // Wait for window load
-        $(window).load(function() {
-            // Animate loader off screen
-            $(".se-pre-con").fadeOut("slow");;
-        });
-    </script>
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>Profile</title>
+        <link rel="stylesheet" href="../assets/css/profile.css">
+        <link rel="stylesheet" href="../assets/css/index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+        <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+        <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+        <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
+        <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.min.css'>
+        <link rel="stylesheet" href="../assets/css/emojionearea.min.css">
+    
+        <style>
+            @media screen and (max-width:900px) {
+                #navbar a {
+                    visibility: visible;
+                }
+                .button-primary {
+                    color: black;
+                    text-align: right;
+                }
+                .nav-link:hover {
+                    color: blue;
+                }
+            }
+        </style>
+    
+        <style>
+            .no-js #loader {
+                display: none;
+            }
+            
+            .js #loader {
+                display: block;
+                position: absolute;
+                left: 100px;
+                top: 0;
+            }
+            
+            .se-pre-con {
+                position: fixed;
+                left: 0px;
+                top: 0px;
+                width: 100%;
+                height: 100%;
+                z-index: 9999;
+                background: url(../assets/images/loader-64x/test2.gif)center no-repeat #fff;
+            }
+        </style>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+        <script>
+            //paste this code under head tag or in a seperate js file.
+            // Wait for window load
+            $(window).load(function() {
+                // Animate loader off screen
+                $(".se-pre-con").fadeOut("slow");;
+            });
+        </script>
+    
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="../assets/js/profile.js"></script>
+        <script src="../assets/js/login.js"></script>
+        <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+        <script type="text/javascript" src="../assets/js/emojionearea.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("#content").emojioneArea({
+                    pickerPosition: "down"
+                });
+            });
+        </script>
+        <script type="text/javascript">
+            function preventBack() {
+                window.history.forward();
+            }
+            setTimeout("preventBack()", 0);
+            window.onunload = function() {
+                null
+            };
+        </script>
+    
+    
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.3/socket.io.js" integrity="sha512-2RDFHqfLZW8IhPRvQYmK9bTLfj/hddxGXQAred2wNZGkrKQkLGj8RCkXfRJPHlDerdHHIzTFaahq4s/P4V6Qig==" crossorigin="anonymous"></script>
+    
+        <script>
+            // creating io instance
+            var io = io("http://localhost:3000");
+    
+            var receiver = "";
+    
+            var sender = "";
+    
+            function enterName() {
+                const button = document.getElementById('submit-btn');
+                button.disabled = true;
+                // get username
+                var name = document.getElementById("mname").value;
+    
+                // send it to server
+                io.emit("user_connected", name);
+    
+                // save my name in global variable
+                sender = name;
+    
+                // prevent the form from submitting
+                return false;
+            }
+    
+            // listen from server
+            io.on("user_connected", function(username) {
+                var html = "";
+                html += "<li><span class='dot'></span><button class='users' onclick='onUserSelected(this.innerHTML);'>" + username + "</button></li>";
+                document.getElementById("users").innerHTML += html;
+            });
+    
+            function onUserSelected(username) {
+                $('#messages').empty();
+                // save selected user in global variable
+                receiver = username;
+    
+                $.get("https://tpgitminiblog.herokuapp.com/messages", function(data) {
+                    for (var i = 0; i <= data.length; i++) {
+                        if (data[i].sender == sender && data[i].receiver == receiver) {
+                            var html = "";
+                            html += "<li>" + data[i].message + "</li>";
+                            document.getElementById("messages").innerHTML += html;
+                        } else if (data[i].receiver == sender && data[i].sender == receiver) {
+                            var html = "";
+                            html += "<li class='rmsg'>" + data[i].message + "</li>";
+                            document.getElementById("messages").innerHTML += html;
+                        }
+                    }
+                });
+    
+                $("#messages").scrollTop($("#messages").height());
+                document.getElementById('msg-title').innerHTML = receiver;
+            }
+    
+            function sendMessage() {
+                var message = document.getElementById("message").value;
+                io.emit("send_message", {
+                    sender: sender,
+                    receiver: receiver,
+                    message: message
+                });
+    
+                var html = "";
+                html += "<li>" + message + "</li>";
+                document.getElementById("messages").innerHTML += html;
+    
+                $("#messages").scrollTop($("#messages").height());
+    
+                // prevent form from submitting
+                return false;
+            }
+            // listen from server
+            io.on("new_message", function(data) {
+                if (data.sender != receiver) {
+                    onUserSelected(data.sender);
+                }
+                var html = "";
+                html += "<li class='rmsg'>" + data.message + "</li>";
+                document.getElementById("messages").innerHTML += html;
+                document.getElementById('msg-title').innerHTML = data.sender;
+                receiver = data.sender;
+            });
+        </script>
+    
+    
+    
+    
+    </head>
 
 <body class="segoe" style="background: rgb(230, 236, 240);">
-    <script src="../assets/js/login.js"></script>
+    <script src="../assets/js/login.js">
+    </script>
     <script>
         fetch('https://tpgitminiblog.herokuapp.com/register')
-            .then(function(response) {
+            .then(function(response){
                 return response.json();
             })
-            .then(function(data) {
-                for (var i = 0; i < data.length; i++) {
-                    var check = data[i].firstname + " " + data[i].lastname;
+            .then(function(data){
+                for(var i = 0;i < data.length;i++){
+                    var check = data[i].firstname + " "+data[i].lastname;
                     if (name == check) {
-                        document.getElementById('test').innerHTML = data[i].batch;
+                        document.getElementById('test-data').innerHTML = data[i].firstname;
+                        document.getElementById('test-data1').innerHTML = data[i].lastname;
+                        document.getElementById('test-data2').innerHTML = data[i].email;
+                        document.getElementById('test-data3').innerHTML = data[i].batch;
+                        document.getElementById('test-data4').innerHTML = data[i].department;
+                        console.log(data[i]);
                     }
                 }
             })
             .catch(function(error) {
-                console.log(error);
-            });
+            console.log(error);
+        });
     </script>
+
 
     <div class="se-pre-con"></div>
 
@@ -104,108 +221,128 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="../index.html"><i class="octicon octicon-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" >
                     <a class="nav-link" href="#"><i class="octicon octicon-person"></i> Profile</a>
                 </li>
 
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item ">
-                    <a class="nav-link" href="../login.html"><i class="octicon octicon-sign-out"></i> Logout</a>
+                    <a class="nav-link" href="../uauth/login.html"><i class="octicon octicon-sign-out"></i> Logout</a>
                 </li>
             </ul>
         </div>
     </nav>
-    <!--<li class="nav-item">
-                    <button class="tweet-btn" data-button='Tweet'>
+
+    
+    <div class="sidenav" id="sidenav">
+        <h3>TPGIT News</h3>
+        <ul class="navbar-nav">
+            <li><i class="iconify" data-icon="octicon:link-16"></i><a class="nav-link" href="../news/news1.html" style="color: black;font-weight: normal; display: inline-block;">Alumni meet 2020-21 </a>
+            </li>
+            <li><i class="iconify" data-icon="octicon:link-16"></i><a class="nav-link" href="../news/news2.html" style="color: black;font-weight: normal; display: inline; ">Inauguration ceremony of CSE department</a>
+            </li>
+            <li><i class="iconify" data-icon="octicon:link-16"></i><a class="nav-link" href="../news/news3.html" style="color: black;font-weight: normal; display: inline-block;">Culturals 2020-21</a>
+            </li>
+        </ul>
+    </div>
+    
+       <main>
+            <div class="main-container">
+                <div class="profile-background">
+                    <div class="container">
+                        <div class="avatar-container">
+                            <div class="avatar">
+                            </div><br/>
+                        </div>
                         
-                        Tweet</button>
-
-
-                </li>-->
-    <script>
-        document.querySelectorAll('.tweet-btn').forEach(function(item) {
-            let getBtnData = item.dataset.button;
-            item.addEventListener('click', function(e) {
-                document.querySelector('[data-type="' + getBtnData + '"]').classList.toggle('visibility')
-            })
-
-        })
-    </script>
-
-    <div class="main-container">
-        <div class="row profile-background">
-            <div class="container">
-                <div class="avatar-container">
-                    <div class="avatar">
                     </div>
                 </div>
-            </div>
-        </div>
-        <nav class="navbar profile-stats">
-            <div class="container">
-
-                <div class="row">
-                    <div class="col">
-
-                    </div>
-                    <div class="col-6">
-                        <ul>
-                            <li class="profile-stats-item-active">
-                                <a>
-                                    <span class="profile-stats-item profile-stats-item-label">Tweets</span>
-                                    <span class="profile-stats-item profile-stats-item-number" id="statslistitemcount">0</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a>
-                                    <span class="profile-stats-item profile-stats-item-label">Following</span>
-                                    <span class="profile-stats-item profile-stats-item-number">0</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a>
-                                    <span class="profile-stats-item profile-stats-item-label">Followers</span>
-                                    <span class="profile-stats-item profile-stats-item-number">0</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a>
-                                    <span class="profile-stats-item profile-stats-item-label">Likes</span>
-                                    <span class="profile-stats-item profile-stats-item-number">0</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col">
-
-                    </div>
+                <form class="mew-form" id="mew-form">
+                    <strong><span id="test-data"></span></strong>
+                    <strong><span id="test-data1"></span></strong><br/>
+                    <i class="fa fa-envelope icon"></i> <span id="test-data2"></span><br/>
+                    <i class="fa fa-calendar icon"></i> <span id="test-data3"></span><br/>
+                    <i class="fa fa-book icon"></i> <span id="test-data4"></span>
+                </form>
+                <div class="mews" id="mews">
                 </div>
-            </div>
-        </nav>
-        <div class="rightcontainer" data-type="Tweet" id="container">
-            <div class="posttweetcontainer">
-                <img class="posttweetprofimg" src="http://3.bp.blogspot.com/-JCYefwq__2U/TxCfC3s1ZpI/AAAAAAAAKcM/u5mw7qPAL0w/s300-c/Camilla-Belle-6.jpg">
-                <div class="ml56px">
-                    <div class="posttweettacontainer">
-                        <textarea id="posttweetta" class="posttweetta" placeholder="What's happening?" draggable="false"></textarea>
-                        <div class="posttweetcountcont">
-                            <span class="posttweetcount"><span id="totalchars">0</span>/250</span>
+                
+               <nav class="navbar profile-stats">
+                    <div class="container">
+        
+                        <div class="row">
+                            <div class="col">
+        
+                            </div>
+                            <div class="col-6">
+                                <ul>
+                                    <li class="profile-stats-item-active">
+                                        <a>
+                                            <span class="profile-stats-item profile-stats-item-label">Tweets</span>
+                                            
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <span class="profile-stats-item profile-stats-item-label">Following</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <span class="profile-stats-item profile-stats-item-label">Followers</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <span class="profile-stats-item profile-stats-item-label">Likes</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col">
+        
+                            </div>
                         </div>
                     </div>
-                    <div class="posttweetbutcont">
-                        <button id="posttweetbut" class="posttweetbut">Post</button>
+                </nav> 
+        </main>
+    
+        <div class="sidenav2" id="sidenav2">
+            <h3>Chat Box</h3>
+    
+            <div class="container">
+                <form onsubmit="return enterName();">
+                    <input id="mname" placeholder="Enter name" hidden>
+                    <script>
+                        document.getElementById('mname').value = name;
+                        console.log(values.mailid);
+                    </script>
+                    <input style="margin-left: 40.2%;background-color: transparent;border: 0px solid #fff;padding: 0px;" id="submit-btn" type="submit" value="Go Online">
+                </form>
+                <div class="row">
+                    <div class="row" style="height: 140px;margin-left: 0px;">
+                        <div class="col" style="height: 140px;position: absolute; overflow-y:scroll">
+                            <ul id="users" style="list-style-type: none;"></ul>
+                        </div>
+                    </div>
+    
+                    <div class="row" style="height: 388px;margin-left: 15px;">
+                        <div class="col" style="height: 388px;position: absolute; overflow-y:scroll; top:200px">
+                            <h4 id="msg-title" style="text-align: center;line-height: 20px;position: relative;"></h4>
+                            <ul id='messages' style="list-style-type: none;" class="messages"></ul>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div>
-                <ul id="tweetscontainer" class="tweetscontainer">
-
-                </ul>
-            </div>
+    
+            <form class="submit">
+                <input class="message" id="message" placeholder="Type a message ">
+                <button class="fa fa-paper-plane fa-2x submit-btn" onclick="return sendMessage();"></button>
+            </form>
         </div>
+    
     </div>
-    <span id="test"></span>
 </body>
 
 </html>

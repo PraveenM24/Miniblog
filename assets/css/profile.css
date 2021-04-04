@@ -365,36 +365,49 @@ a {
 
 
 /* END: Top Navbar elements' styles */
-
 .profile-background {
     height: 320px;
+    padding: 25px 0;
     background-image: url(https://img.freepik.com/free-vector/black-wide-technology-background_79145-249.jpg?size=626&ext=jpg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    position: relative;
+    top: 0px;
+    left: 0px;
 }
 
 
 /* Main avatar */
 
 .avatar-container {
-    bottom: -87px;
-    left: 10px;
+    
+    top: 130px;
     position: absolute;
     transition: bottom .3s;
-    z-index: 3;
+    z-index: 1;
+    margin: 50px 0px 0px 100px;
+    padding: 100px 100px;
+    margin:7px 0px 0px 280px;
 }
 
 .avatar {
     background: #fff;
+    display: block;
     background-image: url(https://img.freepik.com/free-photo/beautiful-sunset-mountains-landscape-with-sun-light-shining-through-orange-clouds-fog_146671-18476.jpg?size=626&ext=jpg&ga=GA1.2.1468765807.1614932685);
     background-size: cover;
     background-repeat: no-repeat;
-    border: 5px solid #fff;
+    border: 5px;
     border-radius: 50%;
-    height: 200px;
-    position: relative;
-    width: 200px;
+    height: 170px;
+    top: 0px;
+    left:0px;
+    position: absolute;
+    width: 170px;
+    box-shadow: #1DA1F2;
+    margin: 0 auto;
+    border-color: rgba(24, 218, 153, 0.15);
+    border-radius: 9999px;
+
 }
 
 
@@ -402,17 +415,24 @@ a {
 
 
 /* Stats Navbar elements' styles */
+.container{
+    width: 50px;
+    
+}
 
 .profile-stats {
     background-color: #fff;
-    padding-top: 0;
+    padding-top: 0px;
     padding-bottom: 0;
+    margin-left: 90px;
+    margin-right: 90px;
 }
 
 .profile-stats ul {
     margin: 0;
     list-style: none;
     padding: 0;
+    margin-left: 100px;
 }
 
 .profile-stats li {
@@ -420,7 +440,7 @@ a {
 }
 
 .profile-stats a {
-    padding: 10px 16px;
+    padding: 10px 10px;
     display: block;
     text-align: center;
 }
@@ -439,6 +459,8 @@ a {
 .profile-stats-item-label {
     font-size: 12px;
     font-weight: bold;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .profile-stats-item-number {
@@ -599,3 +621,26 @@ a {
 
 
 /* END: Main content elements' styles */
+
+
+#test-data{
+    font-style: inherit;
+    font-size: 18px;
+    margin-left: 100px;
+}
+#test-data1{
+    font-style: inherit;
+    font-size: 18px;
+}
+#test-data2,#test-data3,#test-data4{
+    font-size: 14px;
+    font-family: Georgia, serif;
+    color:  rgb(116, 112, 112);
+   
+}
+
+.mew-form i{
+    color: rgb(116, 112, 112);
+    margin-left: 100px;
+
+}

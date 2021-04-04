@@ -1,0 +1,27 @@
+.main{
+    height:80%;
+    background-color: #ffffff;
+    margin-top:8.9%; 
+    border-radius: 3px;
+}
+
+.content{
+    margin: 0 auto; 
+    text-align:center;
+}
+
+.blog-title{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    color: #030d14;
+}
+
+.blog-sub-title{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: #a7a7a7;
+}
+.details{
+    text-align:justify;
+    height: 320px;
+    padding: 10px 40px;
+}
