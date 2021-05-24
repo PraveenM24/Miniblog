@@ -19,6 +19,28 @@
     }
 }
 
+
+.chatelement {
+    display: flex;
+    flex-direction: column;
+}
+
+.chatelement img {
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.uploadImg { 
+    font-size: 17px;
+    cursor: pointer;
+    transition: color .4s;
+}
+
+.uploadImg:hover {
+    color: #666666 !important;
+    
+}
+
 .title {
     text-align: center;
 }
@@ -150,6 +172,7 @@ main {
 
 .iconify {
     color: #BBBBBB;
+    transition: color .4s;
 }
 
 .iconify:hover {

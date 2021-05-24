@@ -10,9 +10,12 @@
     <link rel="stylesheet" href="./assets/css/profile.css">
     <link rel="stylesheet" href="./assets/css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
-    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+    <link rel='stylesheet prefetch'
+        href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
     <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
-    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
+    <link rel='stylesheet prefetch'
+        href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.min.css'>
     <link rel="stylesheet" href="./assets/css/emojionearea.min.css">
 
@@ -21,10 +24,12 @@
             #navbar a {
                 visibility: visible;
             }
+
             .button-primary {
                 color: black;
                 text-align: right;
             }
+
             .nav-link:hover {
                 color: blue;
             }
@@ -35,14 +40,14 @@
         .no-js #loader {
             display: none;
         }
-        
+
         .js #loader {
             display: block;
             position: absolute;
             left: 100px;
             top: 0;
         }
-        
+
         .se-pre-con {
             position: fixed;
             left: 0px;
@@ -58,20 +63,21 @@
     <script>
         //paste this code under head tag or in a seperate js file.
         // Wait for window load
-        $(window).load(function() {
+        $(window).load(function () {
             // Animate loader off screen
             $(".se-pre-con").fadeOut("slow");;
         });
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="./assets/js/profile.js"></script>
     <script src="./assets/js/login.js"></script>
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <script type="text/javascript" src="./assets/js/emojionearea.min.js"></script>
     <script type="text/javascript">
-        $(document).ready(function() {
+        $(document).ready(function () {
             $("#content").emojioneArea({
                 pickerPosition: "down"
             });
@@ -82,14 +88,16 @@
             window.history.forward();
         }
         setTimeout("preventBack()", 0);
-        window.onunload = function() {
+        window.onunload = function () {
             null
         };
     </script>
 
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.3/socket.io.js" integrity="sha512-2RDFHqfLZW8IhPRvQYmK9bTLfj/hddxGXQAred2wNZGkrKQkLGj8RCkXfRJPHlDerdHHIzTFaahq4s/P4V6Qig==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.3/socket.io.js"
+        integrity="sha512-2RDFHqfLZW8IhPRvQYmK9bTLfj/hddxGXQAred2wNZGkrKQkLGj8RCkXfRJPHlDerdHHIzTFaahq4s/P4V6Qig=="
+        crossorigin="anonymous"></script>
 
     <script>
         // creating io instance
@@ -116,9 +124,11 @@
         }
 
         // listen from server
-        io.on("user_connected", function(username) {
+        io.on("user_connected", function (username) {
             var html = "";
-            html += "<li><span class='dot'></span><button class='users' onclick='onUserSelected(this.innerHTML);'>" + username + "</button></li>";
+            html +=
+                "<li><span class='dot'></span><button class='users' onclick='onUserSelected(this.innerHTML);'>" +
+                username + "</button></li>";
             document.getElementById("users").innerHTML += html;
         });
 
@@ -127,7 +137,7 @@
             // save selected user in global variable
             receiver = username;
 
-            $.get("https://tpgitminiblog.herokuapp.com/messages", function(data) {
+            $.get("https://tpgitminiblog.herokuapp.com/messages", function (data) {
                 for (var i = 0; i <= data.length; i++) {
                     if (data[i].sender == sender && data[i].receiver == receiver) {
                         var html = "";
@@ -163,7 +173,7 @@
             return false;
         }
         // listen from server
-        io.on("new_message", function(data) {
+        io.on("new_message", function (data) {
             if (data.sender != receiver) {
                 onUserSelected(data.sender);
             }
@@ -175,8 +185,7 @@
         });
     </script>
 
-
-
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 </head>
 
@@ -184,13 +193,16 @@
     <div class="se-pre-con"></div>
 
     <nav class="navbar navbar-toggleable-md fixed-top" id="navbar" style="visibility: visible;">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse container">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#"><i class="octicon octicon-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#"><i class="octicon octicon-home" aria-hidden="true"></i> Home <span
+                            class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./user/profile.html"><i class="octicon octicon-person"></i> Profile</a>
@@ -208,35 +220,70 @@
     <div class="sidenav" id="sidenav">
         <h3>TPGIT News</h3>
         <ul class="navbar-nav">
-            <li><i class="iconify" data-icon="octicon:link-16"></i><a class="nav-link" href="./news/news1.html" style="color: black;font-weight: normal; display: inline-block;">Alumni meet 2020-21 </a>
+            <li><i class="iconify" data-icon="octicon:link-16"></i><a class="nav-link" href="./news/news1.html"
+                    style="color: black;font-weight: normal; display: inline-block;">Alumni meet 2020-21 </a>
             </li>
-            <li><i class="iconify" data-icon="octicon:link-16"></i><a class="nav-link" href="./news/news2.html" style="color: black;font-weight: normal; display: inline; ">Inauguration ceremony of CSE department</a>
+            <li><i class="iconify" data-icon="octicon:link-16"></i><a class="nav-link" href="./news/news2.html"
+                    style="color: black;font-weight: normal; display: inline; ">Inauguration ceremony of CSE
+                    department</a>
             </li>
-            <li><i class="iconify" data-icon="octicon:link-16"></i><a class="nav-link" href="./news/news3.html" style="color: black;font-weight: normal; display: inline-block;">Culturals 2020-21</a>
+            <li><i class="iconify" data-icon="octicon:link-16"></i><a class="nav-link" href="./news/news3.html"
+                    style="color: black;font-weight: normal; display: inline-block;">Culturals 2020-21</a>
             </li>
         </ul>
     </div>
     <main style="margin-top:3px">
+        <script>
+            function imgUpload(event){
+                event.preventDefault();
+                var created = new Date();
+                const files = event.target.files;
+                const fdata = new FormData();
+                fdata.append('name', name);
+                fdata.append('image', files[0]);
+                fdata.append('content', ' ');
+                fdata.append('created', created);
+                console.log(name);
+                fetch('https://tpgitminiblog-api.herokuapp.com/api', {
+                    method: 'POST',
+                    body: fdata
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('https://tpgitminiblog-api.herokuapp.com/'+data.image)
+                })
+                .catch(error => {
+                    console.error(error)
+                })
+                listAllMews();
+            }
+        </script>
+        
         <form class="mew-form" id="mew-form">
+            <label for="image" style="position: absolute; top:16.7%; left:25%;"><i class="bi bi-image-fill uploadImg" style="color:#BBBBBB;"></i></label>
+            <input type="file" id="image" name="image" accept="image/*" onchange="imgUpload(event)" style="display:none">
             <div class="error-message">
             </div>
             <input class="u-full-width" type="text" id="name" name="name" placeholder="Name" hidden>
             <script>
                 document.getElementById('name').value = name;
             </script>
-
-            <textarea class="u-full-width" type="text" id="content" name="content" placeholder="Write something here.." style="border-color:white;"></textarea>
-            <button class="button-primary" style="text-align: right;color: black; background-color: #fff; border-color: #fff; border-radius: 0px 0px 3px 3px ;"><span class="iconify" data-icon="octicon:paper-airplane-16" data-inline="false"></span></button>
-
+            <textarea class="u-full-width" type="text" id="content" name="content" placeholder="Write something here.."
+                style="border-color:white;"></textarea>
+            <button class="button-primary"
+                style="text-align: right;color: black; background-color: #fff; border-color: #fff; border-radius: 0px 0px 3px 3px ;"><span
+                    class="iconify" data-icon="octicon:paper-airplane-16" data-inline="false"></span></button>
+            <img id="output-img">
         </form>
+
         <div class="mews" id="mews">
         </div>
         <div class="button-container">
             <p id="loadMore">Loading...</p>
         </div>
-        <!--<div class="loading">
-            <img src="loading.gif" alt="">
-        </div>-->
+        <div class="loading">
+            <!-- <img src="loading.gif" alt=""> -->
+        </div>
     </main>
     <div class="sidenav2" id="sidenav2">
         <h3>Chat Box</h3>
@@ -246,9 +293,9 @@
                 <input id="mname" placeholder="Enter name" hidden>
                 <script>
                     document.getElementById('mname').value = name;
-                    console.log(values.mailid);
                 </script>
-                <input style="margin-left: 40.2%;background-color: transparent;border: 0px solid #fff;padding: 0px;" id="submit-btn" type="submit" value="Go Online">
+                <input style="margin-left: 40.2%;background-color: transparent;border: 0px solid #fff;padding: 0px;"
+                    id="submit-btn" type="submit" value="Go Online">
             </form>
             <div class="row">
                 <div class="row" style="height: 140px;margin-left: 0px;">
